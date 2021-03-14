@@ -1,0 +1,60 @@
+import java.util.Scanner;
+
+public class MatrixMultiplication {
+
+	public static void main(String[] args) {
+		System.out.println("*Remember that the columns of first matix should be equal to the rows of second matix*");
+		System.out.print("Enter the number of rows and columns for the matrices to be added- ");
+		Scanner s = new Scanner(System.in);
+		int row1 = s.nextInt();
+		int column1 =  s.nextInt();
+		int row2 = s.nextInt();
+		int column2 = s.nextInt();
+		
+		int [][] arr1 = new int [row1][column1];
+		System.out.println("Enter the elements of the first matix: ");
+		for(int i=0; i<row1; i++) {
+			for (int j=0; j<column1; j++) {
+				arr1[i][j]= s.nextInt();
+			}
+		}
+		
+		int [][] arr2 = new int [row2][column2];
+		System.out.println("Enter the elements of the second matix: ");
+		for(int i=0; i<row2; i++) {
+			for (int j=0; j<column2; j++) {
+				arr2[i][j]= s.nextInt();
+			}
+		}
+		System.out.println("The first matrix  entered is: ");
+		for(int i=0; i<row1; i++) {
+			for (int j=0; j<column1; j++) {
+				System.out.print(arr1[i][j]+ " ");
+			}
+			System.out.println();
+		}
+		System.out.println("The second matrix  entered is: ");
+		for(int i=0; i<row2; i++) {
+			for (int j=0; j<column2; j++) {
+				System.out.print(arr2[i][j]+ " ");
+			}
+			System.out.println();
+		}
+		int [][] arr3 = new int [row1][column2];
+		for(int i=0; i<row1; i++) {
+			for (int j=0; j<column2; j++) {
+				for(int k=0; k<row2; k++) {
+				arr3[i][j]+=arr1[i][k]+arr2[k][j];
+			}
+		}		
+		
+	}
+		System.out.println("The resultant matix after multiplication is: ");
+		for(int i=0; i<row1; i++) {
+			for (int j=0; j<column2; j++) {
+				System.out.print(arr3[i][j]+ " ");
+			}
+			System.out.println();
+		}
+	}
+}
